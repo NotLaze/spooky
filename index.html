@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spooky GitHub</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&display=swap');
+
+  /* Background and font */
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #000000;
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 80%);
+    color: #e63946;
+    font-family: 'Special Elite', monospace;
+    overflow: hidden;
+  }
+
+  /* Flicker animation for spooky effect */
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.4;
+    }
+  }
+
+  h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 10vh;
+    text-shadow: 0 0 10px #e63946, 0 0 20px #e63946;
+    animation: flicker 3s infinite;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #ff6b6b;
+    text-align: center;
+    text-shadow: 0 0 5px #ff6b6b;
+  }
+
+  /* Glowing button */
+  .btn {
+    display: block;
+    width: 200px;
+    margin: 3rem auto;
+    padding: 1rem;
+    background: #e63946;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Special Elite', monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #e63946, 0 0 20px #e63946;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #ff6b6b;
+    box-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff6b6b;
+  }
+
+  /* Floating spooky bats */
+  .bat {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #e63946;
+    box-shadow: 0 0 6px #e63946;
+    filter: drop-shadow(0 0 5px #e63946);
+    animation: fly 10s linear infinite;
+  }
+  .bat::before, .bat::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid #e63946;
+    border-radius: 50%;
+    top: 0;
+  }
+  .bat::before {
+    left: -15px;
+    transform: rotate(30deg);
+  }
+  .bat::after {
+    right: -15px;
+    transform: rotate(-30deg);
+  }
+
+  @keyframes fly {
+    0% {
+      transform: translateX(-100px) translateY(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(110vw) translateY(-30vh);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Welcome to the Haunted Repo</h1>
+  <p>Beware! This repository is cursed with spooky code and eerie secrets lurking in every commit.</p>
+  <button class="btn" onclick="alert('You woke the ghost! 👻')">Enter the Crypt</button>
+
+  <!-- Multiple bats flying -->
+  <div class="bat" style="top: 20vh; animation-delay: 0s;"></div>
+  <div class="bat" style="top: 35vh; animation-delay: 3s;"></div>
+  <div class="bat" style="top: 50vh; animation-delay: 6s;"></div>
+
+</body>
+</html>
